@@ -1,0 +1,8 @@
+<div id="content-child" class="mt-3 ml-3">
+  <h4><span class="font-weight-bold">Objet:</span> <%= @email.object %></h4>
+  <p class="pt-3"><span class="font-weight-bold">Contenu:</span> <%= @email.body %></p>
+  <div id='mail-display-buttons' class="pt-3">
+    <%= link_to "Supprimer", email_path(@email), method: :delete, remote: true, class: "btn btn-danger" %>
+    <%= link_to "Marquer comme non-lu", email_path(@email), remote: true, method: :put, class: "btn btn-info" %>
+  </div>
+</div>

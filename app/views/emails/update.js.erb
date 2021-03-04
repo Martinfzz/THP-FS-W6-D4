@@ -1,0 +1,12 @@
+<% if @email.read %>
+  document.querySelector("#email-" + "<%= @email.id %>").classList.remove("font-weight-bold");
+  document.querySelector("#mail-display-buttons").children[1].textContent = "Marquer comme non-lu";
+  document.querySelector("#mail-display-buttons").children[1].classList.add("btn-info")
+  document.querySelector("#mail-display-buttons").children[1].classList.remove("btn-success")
+<% else %>
+  document.querySelector("#email-" + "<%= @email.id %>").classList.add("font-weight-bold");
+  document.querySelector("#mail-display-buttons").children[1].textContent = "Marquer comme lu";
+  document.querySelector("#mail-display-buttons").children[1].classList.remove("btn-info")
+  document.querySelector("#mail-display-buttons").children[1].classList.add("btn-success")
+<% end %>
+

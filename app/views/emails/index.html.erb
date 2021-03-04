@@ -1,0 +1,23 @@
+<div class="container mail-container border border-warning mt-5">
+  <div class="mail-headers row border-bottom border-warning d-flex p-3">
+    <h4 class="font-weight-bold">THPmailzz</h4>
+    <%= link_to 'Recevoir un email', new_email_path, remote: true, class: "btn btn-warning offset-sm-9"%>
+  </div>
+  <div class="mail-content row">
+    <div class="mail-list w-25">
+    <h5 class="font-weight-bold text-center pt-3 pb-2">Liste des emails</h5>
+      <ul class="pl-0">
+        <% @emails.each_with_index do |email, index| %>
+          <%= link_to email_path(email), remote: true do %>
+            <li id="email-<%= email.id%>" class="bg-light pl-2 py-1 border-top border-warning <% if !email.read %>font-weight-bold<% end %>" style="list-style: none;">
+              <%=email.object%>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="border-left border-warning w-75" id="mail-display">
+    
+    </div>
+  </div>
+</div>

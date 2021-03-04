@@ -1,0 +1,8 @@
+if (document.querySelector("#mail-display").children[0] == undefined) {
+  document.querySelector("#email-" + "<%= @email.id %>").classList.remove("font-weight-bold");
+  document.querySelector("#mail-display").insertAdjacentHTML("beforeend", "<%= j render 'show', email: @email %>");
+} else {
+  document.querySelector("#mail-display").children[0].remove();
+  document.querySelector("#email-" + "<%= @email.id %>").classList.remove("font-weight-bold");
+  document.querySelector("#mail-display").insertAdjacentHTML("beforeend", "<%= j render 'show', email: @email %>");
+}

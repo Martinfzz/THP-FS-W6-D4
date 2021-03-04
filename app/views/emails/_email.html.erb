@@ -1,0 +1,5 @@
+<%= link_to email_path(email), remote: true do %>
+  <li id="email-<%= email.id%>" class="bg-light pl-2 py-1 border-top border-warning <% if !email.read %>font-weight-bold<% end %>" style="list-style: none;">
+    <%=email.object%>
+  </li>
+<% end %>
